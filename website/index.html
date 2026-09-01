@@ -65,6 +65,25 @@
       .about-links a:hover { background: rgba(6, 22, 47, .3); }
       .about-links small { color: #b8c5d8; }
       .contact-section { background: transparent; }
+      h1 { font-size: clamp(50px, 5.5vw, 74px); }
+      .two-column h2 { font-size: clamp(40px, 4.2vw, 60px); }
+      .about-inner h2 { font-size: clamp(46px, 5.2vw, 70px); }
+      .contact-content h2 { font-size: clamp(48px, 5.8vw, 72px); }
+      .signal-grid { justify-content: space-around; gap: 24px; font-size: 27px; }
+      .tabs-demo-section { background: transparent; color: var(--gold); padding: 110px 0 125px; }
+      .tabs-demo-section .download-inner { min-height: 0; display: block; padding: 0; }
+      .tabs-demo-section .download-inner > div:first-child { display: flex; align-items: end; justify-content: space-between; gap: 40px; margin-bottom: 48px; }
+      .tabs-demo-section .download-inner h2 { font-size: clamp(48px, 5.2vw, 70px); margin: 18px 0 0; color: var(--gold); }
+      .tabs-demo-section .download-copy { margin: 0; max-width: 370px; }
+      .tabs-demo-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+      .tab-demo-card { min-height: 230px; padding: 22px 18px; border: 1px solid rgba(246, 215, 154, .28); border-radius: 12px; background: rgba(6, 22, 47, .34); display: flex; flex-direction: column; }
+      .tab-demo-number { font-size: 10px; letter-spacing: .14em; color: #c3cde0; }
+      .tab-demo-icon { font-family: var(--serif); font-size: 34px; color: var(--gold); margin: 24px 0 16px; }
+      .tab-demo-card h3 { font-size: 20px; line-height: 1.05; letter-spacing: -.04em; margin: 0 0 12px; color: var(--gold); }
+      .tab-demo-card p { font-size: 13px; line-height: 1.45; color: #c3cde0; margin: 0; }
+      .tabs-demo-cta { margin-top: 42px; }
+      @media (max-width: 900px) { .tabs-demo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+      @media (max-width: 620px) { h1 { font-size: 48px; } .signal-grid { font-size: 21px; gap: 12px; } .tabs-demo-section .download-inner > div:first-child { display: block; } .tabs-demo-grid { grid-template-columns: 1fr; } .tab-demo-card { min-height: 180px; } }
     </style>
     <script type="application/ld+json">
       {
@@ -116,7 +135,7 @@
       </section>
 
       <section class="signal-strip" aria-label="Axendra product promise">
-        <div class="section-shell signal-grid"><span>Capture</span><b>→</b><span>Connect</span><b>→</b><span>Reflect</span><b>→</b><span>Act</span></div>
+        <div class="section-shell signal-grid"><span>Understand</span><b>→</b><span>Reflect</span><b>→</b><span>Evolve</span></div>
       </section>
 
       <section class="section-shell intro" id="how-it-works">
@@ -142,10 +161,17 @@
         <div class="quote-mark">“</div><blockquote>The point isn’t to collect more ideas. It’s to know which ones you trust—and use them when it matters.</blockquote><p class="quote-attribution">— The Axendra principle</p>
       </section>
 
-      <section class="download-section" id="download">
+      <section class="tabs-demo-section" id="download">
         <div class="section-shell download-inner">
-          <div><p class="eyebrow">Your knowledge should work for you.</p><h2>Start thinking with<br /><em>what shapes you.</em></h2><p class="download-copy">Build a map of the ideas you have chosen, then bring it with you into the questions and decisions that matter most.</p><a class="button button-light" href="https://apps.apple.com/us/search?term=Axendra" target="_blank" rel="noreferrer">Get Axendra on the App Store <span aria-hidden="true">↗</span></a></div>
-          <div class="download-note"><img class="brand-icon" src="axendra-icon.png" alt="Axendra app icon" /><p>Capture<br />Connect<br />Act</p><small>Private by default · Built for lifelong learners</small></div>
+          <div><div class="section-kicker">03 / Demo each tab in the app</div><h2>Demo each tab<br /><em>in the app.</em></h2><p class="download-copy">Each tab moves your thinking one step further—from discovering what shapes you to using it when a decision matters.</p></div>
+          <div class="tabs-demo-grid">
+            <article class="tab-demo-card"><span class="tab-demo-number">01</span><span class="tab-demo-icon">◌</span><h3>Cognitive Map</h3><p>See your adopted insights, categories, and sources in one connected view.</p></article>
+            <article class="tab-demo-card"><span class="tab-demo-number">02</span><span class="tab-demo-icon">✦</span><h3>Ask</h3><p>Ask questions and reason with the knowledge you have chosen to keep.</p></article>
+            <article class="tab-demo-card"><span class="tab-demo-number">03</span><span class="tab-demo-icon">＋</span><h3>Add</h3><p>Bring in people, books, documents, conversations, and your own reflections.</p></article>
+            <article class="tab-demo-card"><span class="tab-demo-number">04</span><span class="tab-demo-icon">⌁</span><h3>Discover</h3><p>Find new sources and ideas to explore, without treating them as truth by default.</p></article>
+            <article class="tab-demo-card"><span class="tab-demo-number">05</span><span class="tab-demo-icon">○</span><h3>Me</h3><p>Manage your account, preferences, subscription, and personal experience.</p></article>
+          </div>
+          <a class="button button-light tabs-demo-cta" href="https://apps.apple.com/us/search?term=Axendra" target="_blank" rel="noreferrer">Get Axendra on the App Store <span aria-hidden="true">↗</span></a>
         </div>
       </section>
 
