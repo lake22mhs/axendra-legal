@@ -73,6 +73,9 @@
       .signal-grid { justify-content: space-around; gap: 24px; font-size: 27px; }
       .hero-art { width: min(100%, 570px); aspect-ratio: 1.04; border-radius: 30px; background: radial-gradient(circle at 50% 48%, rgba(53, 86, 143, .72), transparent 32%), linear-gradient(145deg, #102952, #06162f 72%); border: 1px solid rgba(201, 146, 62, .3); box-shadow: 0 24px 60px rgba(6, 22, 47, .18); }
       .hero-art::before { content: ""; position: absolute; inset: 0; opacity: .18; background: radial-gradient(circle at 16% 20%, #f6d79a 0 1px, transparent 1.5px), radial-gradient(circle at 84% 18%, #f6d79a 0 1px, transparent 1.5px), radial-gradient(circle at 86% 80%, #f6d79a 0 1px, transparent 1.5px), radial-gradient(circle at 14% 80%, #f6d79a 0 1px, transparent 1.5px); }
+      .hero-art { aspect-ratio: auto; background: none; border: 0; box-shadow: none; overflow: hidden; }
+      .hero-art::before { display: none; }
+      .hero-art svg { display: block; width: 100%; height: auto; }
       .halo, .orbit { display: none; }
       .node { z-index: 3; font-size: 12px; letter-spacing: -.02em; }
       .node span { display: flex; flex-direction: column; align-items: center; gap: 3px; }
@@ -141,13 +144,34 @@
           </div>
           <p class="microcopy">Your sources. Your beliefs. Your next decision.</p>
         </div>
-        <div class="hero-art" aria-label="Abstract visualization of a cognitive map">
-          <div class="halo halo-one"></div><div class="halo halo-two"></div>
-          <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-          <div class="node node-center"><span>your<br />thinking</span></div>
-          <div class="node node-a"><span><small>01</small>sources</span></div><div class="node node-b"><span><small>02</small>insights</span></div>
-          <div class="node node-c"><span><small>04</small>decisions</span></div><div class="node node-d"><span><small>03</small>beliefs</span></div>
-          <div class="connector connector-a"></div><div class="connector connector-b"></div><div class="connector connector-c"></div><div class="connector connector-d"></div>
+        <div class="hero-art" aria-label="Sources become insights, beliefs, and decisions">
+          <svg viewBox="0 0 600 560" role="img" aria-label="Sources flow to insights, beliefs, and decisions">
+            <defs>
+              <linearGradient id="map-panel" x1="0" x2="1" y1="0" y2="1">
+                <stop offset="0" stop-color="#173a70" />
+                <stop offset="1" stop-color="#06162f" />
+              </linearGradient>
+              <filter id="map-shadow" x="-20%" y="-20%" width="140%" height="140%">
+                <feDropShadow dx="0" dy="10" stdDeviation="11" flood-color="#000000" flood-opacity=".18" />
+              </filter>
+              <marker id="map-arrow" markerWidth="9" markerHeight="9" refX="7" refY="4.5" orient="auto">
+                <path d="M0,0 L8,4.5 L0,9 Z" fill="#f6d79a" />
+              </marker>
+            </defs>
+            <rect x="2" y="2" width="596" height="556" rx="30" fill="url(#map-panel)" stroke="#c9923e" stroke-opacity=".58" />
+            <circle cx="64" cy="72" r="2" fill="#f6d79a" opacity=".72" /><circle cx="537" cy="83" r="2" fill="#f6d79a" opacity=".56" /><circle cx="527" cy="480" r="2" fill="#f6d79a" opacity=".56" /><circle cx="70" cy="490" r="2" fill="#f6d79a" opacity=".72" />
+            <path d="M166 158 H421" fill="none" stroke="#f6d79a" stroke-width="1.5" stroke-opacity=".72" marker-end="url(#map-arrow)" />
+            <path d="M470 204 V355" fill="none" stroke="#f6d79a" stroke-width="1.5" stroke-opacity=".72" marker-end="url(#map-arrow)" />
+            <path d="M422 402 H167" fill="none" stroke="#f6d79a" stroke-width="1.5" stroke-opacity=".72" marker-end="url(#map-arrow)" />
+            <g filter="url(#map-shadow)"><circle cx="126" cy="158" r="40" fill="#f6d79a" /><text x="126" y="164" text-anchor="middle" fill="#06162f" font-family="DM Sans, Arial, sans-serif" font-size="15" font-weight="700">01</text></g>
+            <text x="126" y="222" text-anchor="middle" fill="#f7f0df" font-family="DM Sans, Arial, sans-serif" font-size="21" font-weight="700">sources</text>
+            <g filter="url(#map-shadow)"><circle cx="470" cy="158" r="40" fill="#f6d79a" /><text x="470" y="164" text-anchor="middle" fill="#06162f" font-family="DM Sans, Arial, sans-serif" font-size="15" font-weight="700">02</text></g>
+            <text x="470" y="222" text-anchor="middle" fill="#f7f0df" font-family="DM Sans, Arial, sans-serif" font-size="21" font-weight="700">insights</text>
+            <g filter="url(#map-shadow)"><circle cx="470" cy="402" r="40" fill="#f6d79a" /><text x="470" y="408" text-anchor="middle" fill="#06162f" font-family="DM Sans, Arial, sans-serif" font-size="15" font-weight="700">03</text></g>
+            <text x="470" y="466" text-anchor="middle" fill="#f7f0df" font-family="DM Sans, Arial, sans-serif" font-size="21" font-weight="700">beliefs</text>
+            <g filter="url(#map-shadow)"><circle cx="126" cy="402" r="40" fill="#f6d79a" /><text x="126" y="408" text-anchor="middle" fill="#06162f" font-family="DM Sans, Arial, sans-serif" font-size="15" font-weight="700">04</text></g>
+            <text x="126" y="466" text-anchor="middle" fill="#f7f0df" font-family="DM Sans, Arial, sans-serif" font-size="21" font-weight="700">decisions</text>
+          </svg>
         </div>
       </section>
 
