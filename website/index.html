@@ -21,7 +21,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="axendra-icon.png" />
+  <link rel="stylesheet" href="styles.css" />
     <style>
       /* Brand palette from the current Axendra icon and splash screen. */
       :root {
@@ -36,7 +37,8 @@
         --line: #d7e0ed;
       }
       body { background: var(--cream); color: var(--ink); }
-      .brand-mark { background: var(--forest); color: var(--gold); }
+      .brand-icon { display: block; width: 30px; height: 30px; border-radius: 9px; object-fit: cover; box-shadow: 0 5px 14px rgba(6, 22, 47, .18); }
+      .download-note .brand-icon { width: 58px; height: 58px; border-radius: 17px; margin-bottom: 15px; }
       .site-header { border-bottom-color: var(--line); }
       .site-header nav, .hero-lede, .body-copy, .quote-attribution { color: #62728a; }
       .microcopy, .site-footer { color: #8290a4; }
@@ -56,7 +58,6 @@
       .download-copy { color: #b8c5d8; }
       .button-light { background: var(--gold); color: var(--forest-dark); }
       .download-note { border-color: rgba(246, 215, 154, .36); color: var(--gold); }
-      .download-note .brand-mark { background: var(--gold); color: var(--forest-dark); }
       .quote-mark { color: var(--gold); }
     </style>
     <script type="application/ld+json">
@@ -74,7 +75,7 @@
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="#top" aria-label="Axendra home"><span class="brand-mark">✦</span>Axendra</a>
+      <a class="brand" href="#top" aria-label="Axendra home"><img class="brand-icon" src="axendra-icon.png" alt="" />Axendra</a>
       <nav aria-label="Primary navigation">
         <a href="#how-it-works">How it works</a>
         <a href="#features">Features</a>
@@ -136,11 +137,11 @@
       <section class="download-section" id="download">
         <div class="section-shell download-inner">
           <div><p class="eyebrow">Your ideas are already connected.</p><h2>Start seeing<br /><em>the pattern.</em></h2><p class="download-copy">Axendra is designed for the moments when you want to go beyond collecting sources—and start understanding how they shape you.</p><a class="button button-light" href="https://apps.apple.com/us/search?term=Axendra" target="_blank" rel="noreferrer">Find Axendra on the App Store <span aria-hidden="true">↗</span></a></div>
-          <div class="download-note"><span class="brand-mark">✦</span><p>Understand<br />Reflect<br />Evolve</p><small>iPhone app · Private by default</small></div>
+          <div class="download-note"><img class="brand-icon" src="axendra-icon.png" alt="Axendra app icon" /><p>Understand<br />Reflect<br />Evolve</p><small>iPhone app · Private by default</small></div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer section-shell"><a class="brand" href="#top"><span class="brand-mark">✦</span>Axendra</a><p>Personal intellectual development, in practice.</p><div><a href="https://lake22mhs.github.io/axendra-legal/privacy-policy/">Privacy</a><a href="https://lake22mhs.github.io/axendra-legal/delete-account/">Delete account</a><a href="mailto:axendra.support@gmail.com">Contact</a></div><span class="copyright">© 2026 Axendra</span></footer>
+    <footer class="site-footer section-shell"><a class="brand" href="#top"><img class="brand-icon" src="axendra-icon.png" alt="" />Axendra</a><p>Personal intellectual development, in practice.</p><div><a href="https://lake22mhs.github.io/axendra-legal/privacy-policy/">Privacy</a><a href="https://lake22mhs.github.io/axendra-legal/delete-account/">Delete account</a><a href="mailto:axendra.support@gmail.com">Contact</a></div><span class="copyright">© 2026 Axendra</span></footer>
   </body>
 </html>
