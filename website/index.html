@@ -26,10 +26,10 @@
     <style>
       /* Brand palette from the current Axendra icon and starry mountain background. */
       :root {
-        --cream: #06162f;
-        --cream-deep: #0d2347;
-        --ink: #f6d79a;
-        --forest: #f6d79a;
+        --cream: #f7f0df;
+        --cream-deep: #eee4cf;
+        --ink: #0b1b36;
+        --forest: #c9923e;
         --forest-dark: #06162f;
         --gold: #f6d79a;
         --sage: #17386e;
@@ -40,30 +40,30 @@
       .brand-icon { display: block; width: 30px; height: 30px; border-radius: 9px; object-fit: cover; box-shadow: 0 5px 14px rgba(6, 22, 47, .18); }
       .download-note .brand-icon { width: 58px; height: 58px; border-radius: 17px; margin-bottom: 15px; }
       .site-header { border-bottom-color: var(--line); }
-      .site-header nav, .hero-lede, .body-copy, .quote-attribution { color: #d6c39a; }
-      .microcopy, .site-footer { color: #aebbd0; }
-      .hero-art { background: linear-gradient(145deg, #17386e, #0d2347); }
+      .site-header nav, .hero-lede, .body-copy, .quote-attribution { color: #4f5f72; }
+      .microcopy, .site-footer { color: #6a7685; }
+      .hero-art { background: linear-gradient(145deg, #d7e1f0, #b9cce5); }
       .halo, .halo-two, .orbit, .orbit-two { border-color: rgba(246, 215, 154, .28); }
       .connector { background: rgba(246, 215, 154, .42); }
-      .node, .node-a, .node-b, .node-c, .node-d { color: var(--ink); background: var(--cream); border-color: rgba(246, 215, 154, .4); }
+      .node, .node-a, .node-b, .node-c, .node-d { color: var(--forest-dark); background: var(--cream); border-color: rgba(11, 27, 54, .2); }
       .node-center { background: var(--gold); color: var(--forest-dark); }
-      .art-caption { background: rgba(6, 22, 47, .82); color: var(--gold); }
+      .art-caption { background: rgba(247, 240, 223, .9); color: var(--forest-dark); }
       .signal-strip { background: transparent; color: var(--gold); }
       .signal-grid b { color: var(--gold); }
       .feature-section, .download-section, .contact-section { background: transparent; }
-      .feature-dark, .feature-sage, .feature-paper { background: rgba(6, 22, 47, .18); color: var(--gold); border: 1px solid rgba(246, 215, 154, .28); }
+      .feature-dark, .feature-sage, .feature-paper { background: rgba(255, 255, 255, .42); color: var(--forest-dark); border: 1px solid rgba(11, 27, 54, .16); }
       .download-section, .contact-section { color: var(--gold); }
       .download-inner h2, .contact-content h2 { color: var(--gold); }
-      .download-copy { color: #c3cde0; }
+      .download-copy { color: #4f5f72; }
       .button, .button-light { background: var(--gold); color: var(--forest-dark); }
       .download-note { border-color: rgba(246, 215, 154, .36); color: var(--gold); }
       .quote-mark { color: var(--gold); }
       .intro, .quote-section { background: transparent; }
       .about-section { background: transparent; }
-      .about-lede { color: #d6c39a; }
-      .about-links a { background: rgba(6, 22, 47, .18); border-color: rgba(246, 215, 154, .35); color: var(--gold); }
-      .about-links a:hover { background: rgba(6, 22, 47, .3); }
-      .about-links small { color: #b8c5d8; }
+      .about-lede { color: #4f5f72; }
+      .about-links a { background: rgba(255, 255, 255, .42); border-color: rgba(11, 27, 54, .16); color: var(--forest-dark); }
+      .about-links a:hover { background: rgba(255, 255, 255, .7); }
+      .about-links small { color: #6a7685; }
       .contact-section { background: transparent; }
       h1 { font-size: clamp(50px, 5.5vw, 74px); }
       .two-column h2 { font-size: clamp(40px, 4.2vw, 60px); }
@@ -76,11 +76,11 @@
       .tabs-demo-section .download-inner h2 { font-size: clamp(48px, 5.2vw, 70px); margin: 18px 0 0; color: var(--gold); }
       .tabs-demo-section .download-copy { margin: 0; max-width: 370px; }
       .tabs-demo-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
-      .tab-demo-card { min-height: 230px; padding: 22px 18px; border: 1px solid rgba(246, 215, 154, .28); border-radius: 12px; background: rgba(6, 22, 47, .34); display: flex; flex-direction: column; }
-      .tab-demo-number { font-size: 10px; letter-spacing: .14em; color: #c3cde0; }
+      .tab-demo-card { min-height: 230px; padding: 22px 18px; border: 1px solid rgba(11, 27, 54, .16); border-radius: 12px; background: rgba(255, 255, 255, .42); display: flex; flex-direction: column; }
+      .tab-demo-number { font-size: 10px; letter-spacing: .14em; color: #6a7685; }
       .tab-demo-icon { font-family: var(--serif); font-size: 34px; color: var(--gold); margin: 24px 0 16px; }
       .tab-demo-card h3 { font-size: 20px; line-height: 1.05; letter-spacing: -.04em; margin: 0 0 12px; color: var(--gold); }
-      .tab-demo-card p { font-size: 13px; line-height: 1.45; color: #c3cde0; margin: 0; }
+      .tab-demo-card p { font-size: 13px; line-height: 1.45; color: #4f5f72; margin: 0; }
       .tabs-demo-cta { margin-top: 42px; }
       @media (max-width: 900px) { .tabs-demo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
       @media (max-width: 620px) { h1 { font-size: 48px; } .signal-grid { font-size: 21px; gap: 12px; } .tabs-demo-section .download-inner > div:first-child { display: block; } .tabs-demo-grid { grid-template-columns: 1fr; } .tab-demo-card { min-height: 180px; } }
