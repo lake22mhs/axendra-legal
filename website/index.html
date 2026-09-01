@@ -76,9 +76,12 @@
       .hero-art { aspect-ratio: auto; background: none; border: 0; box-shadow: none; overflow: hidden; }
       .hero-art::before { display: none; }
       .hero-art svg { display: block; width: 100%; height: auto; }
-      .neural-network { opacity: .34; }
-      .network-lines { stroke-dasharray: 2 8; animation: network-breathe 7s ease-in-out infinite; }
-      .network-nodes { opacity: .65; }
+      .neural-network { opacity: .68; }
+      .network-lines { stroke-opacity: .58; stroke-dasharray: 1 7; animation: network-breathe 7s ease-in-out infinite; }
+      .network-nodes { opacity: .86; }
+      .network-nodes circle { animation: node-pulse 3.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+      .network-nodes circle:nth-child(3n) { animation-delay: -1.2s; }
+      .network-nodes circle:nth-child(3n + 2) { animation-delay: -2.4s; }
       .network-signals { opacity: .95; }
       .map-thread { stroke-dasharray: 900; stroke-dashoffset: 900; }
       .map-dots, .map-stage { opacity: 0; }
@@ -92,10 +95,11 @@
       @keyframes trace-thinking-path { to { stroke-dashoffset: 0; } }
       @keyframes reveal-stage { from { opacity: 0; } to { opacity: 1; } }
       @keyframes network-breathe { 0%, 100% { opacity: .36; } 50% { opacity: .72; } }
+      @keyframes node-pulse { 0%, 100% { opacity: .35; transform: scale(.8); } 50% { opacity: 1; transform: scale(1.45); } }
       @media (prefers-reduced-motion: reduce) {
         .map-thread { stroke-dashoffset: 0; }
         .map-dots, .map-stage { opacity: 1; }
-        .network-lines, .hero-art.is-visible .map-thread, .hero-art.is-visible .map-dots, .hero-art.is-visible .map-stage { animation: none; }
+        .network-lines, .network-nodes circle, .hero-art.is-visible .map-thread, .hero-art.is-visible .map-dots, .hero-art.is-visible .map-stage { animation: none; }
       }
       .halo, .orbit { display: none; }
       .node { z-index: 3; font-size: 12px; letter-spacing: -.02em; }
@@ -177,6 +181,11 @@
                 <stop offset=".48" stop-color="#d9a952" />
                 <stop offset="1" stop-color="#ffe1a0" />
               </linearGradient>
+              <radialGradient id="active-node" cx="35%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#8b5cf6" />
+                <stop offset=".62" stop-color="#5135c9" />
+                <stop offset="1" stop-color="#30228e" />
+              </radialGradient>
               <filter id="map-glow" x="-30%" y="-30%" width="160%" height="160%">
                 <feGaussianBlur stdDeviation="8" result="blur" />
                 <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
@@ -184,55 +193,40 @@
             </defs>
             <rect x="2" y="2" width="596" height="556" rx="30" fill="url(#map-panel)" stroke="#c9923e" stroke-opacity=".65" />
             <g class="neural-network" aria-hidden="true">
-              <g class="network-lines" fill="none" stroke="#b7c9e5" stroke-width="1">
-                <path d="M72 178 L176 135 L274 190 L386 142 L518 212" />
-                <path d="M72 178 L176 260 L274 190 L386 268 L518 212" />
-                <path d="M72 178 L176 260 L274 355 L386 268 L518 212" />
-                <path d="M72 382 L176 260 L274 190 L386 268 L518 354" />
-                <path d="M72 382 L176 420 L274 355 L386 410 L518 354" />
-                <path d="M72 382 L176 420 L274 355 L386 268 L518 212" />
-                <path d="M176 135 L274 355 M176 420 L386 142 M274 190 L386 410" />
+              <g class="network-lines" fill="none" stroke="#9bb8df" stroke-width="1">
+                <path d="M70 120 C145 54 220 105 290 154 S430 98 530 145" />
+                <path d="M70 120 C140 210 210 90 290 154 S425 205 530 145" />
+                <path d="M70 205 C145 140 210 255 290 154 S430 105 530 230" />
+                <path d="M70 205 C155 250 210 330 290 280 S430 165 530 230" />
+                <path d="M70 285 C140 225 210 180 290 280 S420 310 530 315" />
+                <path d="M70 285 C155 355 215 250 290 280 S425 415 530 315" />
+                <path d="M70 390 C145 310 210 420 290 280 S430 285 530 400" />
+                <path d="M70 390 C150 475 220 365 290 280 S430 455 530 400" />
+                <path d="M70 470 C145 405 215 455 290 380 S425 360 530 400" />
+                <path d="M145 54 C180 150 210 330 290 380 M210 90 C265 180 330 250 430 455 M350 82 C390 180 430 300 530 400" />
               </g>
-              <g class="network-nodes" fill="#b7c9e5">
-                <circle cx="72" cy="178" r="3" /><circle cx="72" cy="382" r="3" />
-                <circle cx="176" cy="135" r="3" /><circle cx="176" cy="260" r="3" /><circle cx="176" cy="420" r="3" />
-                <circle cx="274" cy="190" r="3" /><circle cx="274" cy="355" r="3" />
-                <circle cx="386" cy="142" r="3" /><circle cx="386" cy="268" r="3" /><circle cx="386" cy="410" r="3" />
-                <circle cx="518" cy="212" r="3" /><circle cx="518" cy="354" r="3" />
+              <g class="network-nodes" fill="#6ea7d5">
+                <circle cx="70" cy="120" r="4" /><circle cx="70" cy="205" r="4" /><circle cx="70" cy="285" r="4" /><circle cx="70" cy="390" r="4" /><circle cx="70" cy="470" r="4" />
+                <circle cx="145" cy="54" r="3" /><circle cx="145" cy="165" r="3" /><circle cx="145" cy="280" r="3" /><circle cx="145" cy="405" r="3" />
+                <circle cx="290" cy="154" r="4" /><circle cx="290" cy="280" r="4" /><circle cx="290" cy="380" r="4" />
+                <circle cx="350" cy="82" r="3" /><circle cx="350" cy="205" r="3" /><circle cx="350" cy="330" r="3" /><circle cx="350" cy="470" r="3" />
+                <circle cx="430" cy="98" r="3" /><circle cx="430" cy="205" r="3" /><circle cx="430" cy="325" r="3" /><circle cx="430" cy="455" r="3" />
+                <circle cx="530" cy="145" r="4" /><circle cx="530" cy="230" r="4" /><circle cx="530" cy="315" r="4" /><circle cx="530" cy="400" r="4" />
               </g>
               <g class="network-signals" fill="#f6d79a">
-                <circle r="3.5"><animateMotion dur="3.6s" repeatCount="indefinite" path="M72 178 L176 135 L274 190 L386 142 L518 212" /></circle>
-                <circle r="2.5"><animateMotion dur="4.4s" begin="1.2s" repeatCount="indefinite" path="M72 382 L176 420 L274 355 L386 410 L518 354" /></circle>
-                <circle r="2.5"><animateMotion dur="4s" begin="2.1s" repeatCount="indefinite" path="M72 178 L176 260 L274 355 L386 268 L518 212" /></circle>
+                <circle r="3.5"><animateMotion dur="4s" repeatCount="indefinite" path="M70 205 C155 250 210 330 290 280 S430 415 530 315" /></circle>
+                <circle r="2.5"><animateMotion dur="5.2s" begin="1.4s" repeatCount="indefinite" path="M70 120 C140 210 210 90 290 154 S425 205 530 145" /></circle>
+                <circle r="2.5"><animateMotion dur="4.6s" begin="2.3s" repeatCount="indefinite" path="M70 390 C150 475 220 365 290 280 S430 455 530 400" /></circle>
               </g>
             </g>
-            <path d="M92 88 C 240 34, 410 62, 504 165 C 579 247, 522 343, 408 361 C 286 380, 196 294, 129 354 C 81 397, 142 484, 302 475" fill="none" stroke="#f6d79a" stroke-opacity=".14" stroke-width="1" />
-            <path class="map-thread map-thread-glow" d="M84 112 C 184 100, 222 180, 313 181 C 404 182, 458 130, 513 191 C 555 237, 488 278, 401 296 C 304 316, 273 379, 328 434" fill="none" stroke="url(#map-thread)" stroke-width="2.2" stroke-linecap="round" filter="url(#map-glow)" />
-            <path class="map-thread" d="M84 112 C 184 100, 222 180, 313 181 C 404 182, 458 130, 513 191 C 555 237, 488 278, 401 296 C 304 316, 273 379, 328 434" fill="none" stroke="#f6d79a" stroke-width="1.35" stroke-linecap="round" />
-            <g class="map-dots" fill="#f6d79a">
-              <circle cx="84" cy="112" r="5" /><circle cx="313" cy="181" r="5" /><circle cx="401" cy="296" r="5" /><circle cx="328" cy="434" r="5" />
-            </g>
+            <path class="map-thread map-thread-glow" d="M78 160 C 180 100, 215 208, 315 180 C 410 152, 468 204, 523 276 C 548 310, 506 356, 423 365 C 320 377, 275 430, 330 484" fill="none" stroke="url(#map-thread)" stroke-width="2.2" stroke-linecap="round" filter="url(#map-glow)" />
+            <path class="map-thread" d="M78 160 C 180 100, 215 208, 315 180 C 410 152, 468 204, 523 276 C 548 310, 506 356, 423 365 C 320 377, 275 430, 330 484" fill="none" stroke="#f6d79a" stroke-width="1.35" stroke-linecap="round" />
+            <g class="map-dots" fill="#f6d79a"><circle cx="78" cy="160" r="5" /><circle cx="315" cy="180" r="5" /><circle cx="423" cy="365" r="5" /><circle cx="330" cy="484" r="5" /></g>
             <g fill="#f6d79a" opacity=".64"><circle cx="64" cy="68" r="1.7" /><circle cx="150" cy="72" r="1.4" /><circle cx="492" cy="79" r="1.8" /><circle cx="535" cy="337" r="1.5" /><circle cx="73" cy="457" r="1.8" /><circle cx="506" cy="477" r="1.4" /></g>
-            <g class="map-stage map-stage-one" transform="translate(83 78)">
-              <text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">01</text>
-              <text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Sources</text>
-              <text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you encounter</text>
-            </g>
-            <g class="map-stage map-stage-two" transform="translate(303 135)">
-              <text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">02</text>
-              <text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Insights</text>
-              <text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what stays with you</text>
-            </g>
-            <g class="map-stage map-stage-three" transform="translate(400 259)">
-              <text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">03</text>
-              <text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Beliefs</text>
-              <text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you choose to trust</text>
-            </g>
-            <g class="map-stage map-stage-four" transform="translate(168 416)">
-              <text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">04</text>
-              <text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Decisions</text>
-              <text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you do next</text>
-            </g>
+            <g class="map-stage map-stage-one" transform="translate(78 126)"><text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">01</text><text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Sources</text><text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you encounter</text></g>
+            <g class="map-stage map-stage-two" transform="translate(296 142)"><text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">02</text><text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Insights</text><text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what stays with you</text></g>
+            <g class="map-stage map-stage-three" transform="translate(410 323)"><text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">03</text><text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Beliefs</text><text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you choose to trust</text></g>
+            <g class="map-stage map-stage-four" transform="translate(170 442)"><text x="0" y="0" fill="#f6d79a" font-family="DM Sans, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="2">04</text><text x="0" y="38" fill="#f7f0df" font-family="Newsreader, Georgia, serif" font-size="35" font-weight="600">Decisions</text><text x="0" y="59" fill="#d7e1f0" font-family="DM Sans, Arial, sans-serif" font-size="12">what you do next</text></g>
           </svg>
         </div>
       </section>
