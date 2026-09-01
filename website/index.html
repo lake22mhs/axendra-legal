@@ -26,39 +26,45 @@
     <style>
       /* Brand palette from the current Axendra icon and splash screen. */
       :root {
-        --cream: #fff8e8;
-        --cream-deep: #eef2f8;
-        --ink: #10233f;
-        --forest: #17386e;
+        --cream: #06162f;
+        --cream-deep: #0d2347;
+        --ink: #f6d79a;
+        --forest: #f6d79a;
         --forest-dark: #06162f;
         --gold: #f6d79a;
-        --sage: #dbe6f4;
-        --mist: #71819a;
-        --line: #d7e0ed;
+        --sage: #17386e;
+        --mist: #b8c5d8;
+        --line: rgba(246, 215, 154, .24);
       }
       body { background: var(--cream); color: var(--ink); }
       .brand-icon { display: block; width: 30px; height: 30px; border-radius: 9px; object-fit: cover; box-shadow: 0 5px 14px rgba(6, 22, 47, .18); }
       .download-note .brand-icon { width: 58px; height: 58px; border-radius: 17px; margin-bottom: 15px; }
       .site-header { border-bottom-color: var(--line); }
-      .site-header nav, .hero-lede, .body-copy, .quote-attribution { color: #62728a; }
-      .microcopy, .site-footer { color: #8290a4; }
-      .hero-art { background: linear-gradient(145deg, #e5edf8, #cbdcf1); }
-      .halo, .halo-two, .orbit, .orbit-two { border-color: rgba(23, 56, 110, .22); }
-      .connector { background: rgba(23, 56, 110, .3); }
-      .node, .node-a, .node-b, .node-c, .node-d { color: var(--forest); background: var(--cream); border-color: rgba(23, 56, 110, .24); }
-      .node-center { background: var(--forest-dark); color: var(--cream); }
-      .art-caption { background: rgba(219, 230, 244, .9); color: var(--forest); }
-      .signal-strip { background: var(--forest-dark); color: var(--cream); }
+      .site-header nav, .hero-lede, .body-copy, .quote-attribution { color: #d6c39a; }
+      .microcopy, .site-footer { color: #aebbd0; }
+      .hero-art { background: linear-gradient(145deg, #17386e, #0d2347); }
+      .halo, .halo-two, .orbit, .orbit-two { border-color: rgba(246, 215, 154, .28); }
+      .connector { background: rgba(246, 215, 154, .42); }
+      .node, .node-a, .node-b, .node-c, .node-d { color: var(--ink); background: var(--cream); border-color: rgba(246, 215, 154, .4); }
+      .node-center { background: var(--gold); color: var(--forest-dark); }
+      .art-caption { background: rgba(6, 22, 47, .82); color: var(--gold); }
+      .signal-strip { background: var(--cream-deep); color: var(--gold); }
       .signal-grid b { color: var(--gold); }
       .feature-section { background: var(--cream-deep); }
       .feature-dark, .download-section { background: var(--forest-dark); }
-      .feature-sage { background: #dbe6f4; }
-      .feature-paper { background: #ffffff; }
-      .download-inner h2 { color: var(--cream); }
-      .download-copy { color: #b8c5d8; }
-      .button-light { background: var(--gold); color: var(--forest-dark); }
+      .feature-sage { background: #17386e; }
+      .feature-paper { background: #102b54; }
+      .download-inner h2 { color: var(--gold); }
+      .download-copy { color: #c3cde0; }
+      .button, .button-light { background: var(--gold); color: var(--forest-dark); }
       .download-note { border-color: rgba(246, 215, 154, .36); color: var(--gold); }
       .quote-mark { color: var(--gold); }
+      .about-section { background: var(--cream); }
+      .about-lede { color: #d6c39a; }
+      .about-links a { background: rgba(23, 56, 110, .72); border-color: rgba(246, 215, 154, .28); color: var(--gold); }
+      .about-links a:hover { background: #17386e; }
+      .about-links small { color: #b8c5d8; }
+      .contact-section { background: #102b54; }
     </style>
     <script type="application/ld+json">
       {
