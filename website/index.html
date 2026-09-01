@@ -76,6 +76,10 @@
       .hero-art { aspect-ratio: auto; background: none; border: 0; box-shadow: none; overflow: hidden; }
       .hero-art::before { display: none; }
       .hero-art svg { display: block; width: 100%; height: auto; }
+      .neural-network { opacity: .34; }
+      .network-lines { stroke-dasharray: 2 8; animation: network-breathe 7s ease-in-out infinite; }
+      .network-nodes { opacity: .65; }
+      .network-signals { opacity: .95; }
       .map-thread { stroke-dasharray: 900; stroke-dashoffset: 900; }
       .map-dots, .map-stage { opacity: 0; }
       .hero-art.is-visible .map-thread { animation: trace-thinking-path 2.8s cubic-bezier(.35,.05,.15,1) forwards; }
@@ -87,10 +91,11 @@
       .hero-art.is-visible .map-stage-four { animation-delay: 2.02s; }
       @keyframes trace-thinking-path { to { stroke-dashoffset: 0; } }
       @keyframes reveal-stage { from { opacity: 0; } to { opacity: 1; } }
+      @keyframes network-breathe { 0%, 100% { opacity: .36; } 50% { opacity: .72; } }
       @media (prefers-reduced-motion: reduce) {
         .map-thread { stroke-dashoffset: 0; }
         .map-dots, .map-stage { opacity: 1; }
-        .hero-art.is-visible .map-thread, .hero-art.is-visible .map-dots, .hero-art.is-visible .map-stage { animation: none; }
+        .network-lines, .hero-art.is-visible .map-thread, .hero-art.is-visible .map-dots, .hero-art.is-visible .map-stage { animation: none; }
       }
       .halo, .orbit { display: none; }
       .node { z-index: 3; font-size: 12px; letter-spacing: -.02em; }
@@ -178,6 +183,29 @@
               </filter>
             </defs>
             <rect x="2" y="2" width="596" height="556" rx="30" fill="url(#map-panel)" stroke="#c9923e" stroke-opacity=".65" />
+            <g class="neural-network" aria-hidden="true">
+              <g class="network-lines" fill="none" stroke="#b7c9e5" stroke-width="1">
+                <path d="M72 178 L176 135 L274 190 L386 142 L518 212" />
+                <path d="M72 178 L176 260 L274 190 L386 268 L518 212" />
+                <path d="M72 178 L176 260 L274 355 L386 268 L518 212" />
+                <path d="M72 382 L176 260 L274 190 L386 268 L518 354" />
+                <path d="M72 382 L176 420 L274 355 L386 410 L518 354" />
+                <path d="M72 382 L176 420 L274 355 L386 268 L518 212" />
+                <path d="M176 135 L274 355 M176 420 L386 142 M274 190 L386 410" />
+              </g>
+              <g class="network-nodes" fill="#b7c9e5">
+                <circle cx="72" cy="178" r="3" /><circle cx="72" cy="382" r="3" />
+                <circle cx="176" cy="135" r="3" /><circle cx="176" cy="260" r="3" /><circle cx="176" cy="420" r="3" />
+                <circle cx="274" cy="190" r="3" /><circle cx="274" cy="355" r="3" />
+                <circle cx="386" cy="142" r="3" /><circle cx="386" cy="268" r="3" /><circle cx="386" cy="410" r="3" />
+                <circle cx="518" cy="212" r="3" /><circle cx="518" cy="354" r="3" />
+              </g>
+              <g class="network-signals" fill="#f6d79a">
+                <circle r="3.5"><animateMotion dur="3.6s" repeatCount="indefinite" path="M72 178 L176 135 L274 190 L386 142 L518 212" /></circle>
+                <circle r="2.5"><animateMotion dur="4.4s" begin="1.2s" repeatCount="indefinite" path="M72 382 L176 420 L274 355 L386 410 L518 354" /></circle>
+                <circle r="2.5"><animateMotion dur="4s" begin="2.1s" repeatCount="indefinite" path="M72 178 L176 260 L274 355 L386 268 L518 212" /></circle>
+              </g>
+            </g>
             <path d="M92 88 C 240 34, 410 62, 504 165 C 579 247, 522 343, 408 361 C 286 380, 196 294, 129 354 C 81 397, 142 484, 302 475" fill="none" stroke="#f6d79a" stroke-opacity=".14" stroke-width="1" />
             <path class="map-thread map-thread-glow" d="M84 112 C 184 100, 222 180, 313 181 C 404 182, 458 130, 513 191 C 555 237, 488 278, 401 296 C 304 316, 273 379, 328 434" fill="none" stroke="url(#map-thread)" stroke-width="2.2" stroke-linecap="round" filter="url(#map-glow)" />
             <path class="map-thread" d="M84 112 C 184 100, 222 180, 313 181 C 404 182, 458 130, 513 191 C 555 237, 488 278, 401 296 C 304 316, 273 379, 328 434" fill="none" stroke="#f6d79a" stroke-width="1.35" stroke-linecap="round" />
