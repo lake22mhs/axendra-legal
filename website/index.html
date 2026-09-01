@@ -36,7 +36,7 @@
         --mist: #b8c5d8;
         --line: rgba(246, 215, 154, .24);
       }
-      body { background: var(--cream); color: var(--ink); }
+      body { background-color: var(--cream); background-image: linear-gradient(rgba(6, 22, 47, .72), rgba(6, 22, 47, .82)), url("splash-background.png"); background-position: center top; background-size: cover; background-attachment: fixed; color: var(--ink); }
       .brand-icon { display: block; width: 30px; height: 30px; border-radius: 9px; object-fit: cover; box-shadow: 0 5px 14px rgba(6, 22, 47, .18); }
       .download-note .brand-icon { width: 58px; height: 58px; border-radius: 17px; margin-bottom: 15px; }
       .site-header { border-bottom-color: var(--line); }
@@ -50,7 +50,7 @@
       .art-caption { background: rgba(6, 22, 47, .82); color: var(--gold); }
       .signal-strip { background: var(--cream-deep); color: var(--gold); }
       .signal-grid b { color: var(--gold); }
-      .feature-section { background: var(--cream-deep); }
+      .feature-section { background: rgba(13, 35, 71, .84); }
       .feature-dark, .download-section { background: var(--forest-dark); }
       .feature-sage { background: #17386e; }
       .feature-paper { background: #102b54; }
@@ -59,7 +59,8 @@
       .button, .button-light { background: var(--gold); color: var(--forest-dark); }
       .download-note { border-color: rgba(246, 215, 154, .36); color: var(--gold); }
       .quote-mark { color: var(--gold); }
-      .about-section { background: var(--cream); }
+      .intro, .quote-section { background: transparent; }
+      .about-section { background: rgba(23, 56, 110, .76); }
       .about-lede { color: #d6c39a; }
       .about-links a { background: rgba(23, 56, 110, .72); border-color: rgba(246, 215, 154, .28); color: var(--gold); }
       .about-links a:hover { background: #17386e; }
