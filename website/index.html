@@ -78,6 +78,8 @@
       .orbit { width: 72%; height: 34%; left: 14%; top: 37%; border-color: rgba(246, 215, 154, .2); }
       .orbit-two { width: 62%; left: 19%; top: 34%; border-color: rgba(246, 215, 154, .16); }
       .node { z-index: 3; font-size: 12px; letter-spacing: -.02em; }
+      .node span { display: flex; flex-direction: column; align-items: center; gap: 3px; }
+      .node small { font-family: var(--sans); font-size: 9px; font-weight: 700; letter-spacing: .12em; opacity: .62; }
       .node-center { width: 174px; height: 174px; left: calc(50% - 87px); top: calc(50% - 87px); background: #f6d79a; color: #33465b; font-size: 19px; box-shadow: 0 0 0 12px rgba(246, 215, 154, .08), 0 18px 35px rgba(0, 0, 0, .22); }
       .node-a, .node-b, .node-c, .node-d { width: 116px; height: 56px; border-radius: 16px; background: #f7f0df; color: #33465b; border: 1px solid rgba(201, 146, 62, .7); box-shadow: 0 10px 22px rgba(0, 0, 0, .16); }
       .node-a { left: 8%; top: 19%; }
@@ -146,10 +148,10 @@
           <div class="halo halo-one"></div><div class="halo halo-two"></div>
           <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
           <div class="node node-center"><span>your<br />thinking</span></div>
-          <div class="node node-a"><span>sources</span></div><div class="node node-b"><span>beliefs</span></div>
-          <div class="node node-c"><span>decisions</span></div><div class="node node-d"><span>insights</span></div>
+          <div class="node node-a"><span><small>01</small>sources</span></div><div class="node node-b"><span><small>02</small>insights</span></div>
+          <div class="node node-c"><span><small>04</small>decisions</span></div><div class="node node-d"><span><small>03</small>beliefs</span></div>
           <div class="connector connector-a"></div><div class="connector connector-b"></div><div class="connector connector-c"></div><div class="connector connector-d"></div>
-          <p class="art-caption">A living map<br />for deliberate action.</p>
+          <p class="art-caption">sources → insights → beliefs → decisions</p>
         </div>
       </section>
 
