@@ -28,10 +28,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Configure Pages
         uses: actions/configure-pages@v5
+      - name: Prepare website and legal pages
+        run: |
+          mkdir -p .pages
+          cp -R website/. .pages/
+          cp -R privacy-policy terms-of-use delete-account .pages/
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: website
+          path: .pages
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
