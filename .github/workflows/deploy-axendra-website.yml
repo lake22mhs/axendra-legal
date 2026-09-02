@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths:
       - "website/**"
+      - "community-rules/**"
+      - "privacy-policy/**"
+      - "terms-of-use/**"
+      - "delete-account/**"
       - ".github/workflows/deploy-axendra-website.yml"
   workflow_dispatch:
 
@@ -32,7 +36,7 @@ jobs:
         run: |
           mkdir -p .pages
           cp -R website/. .pages/
-          cp -R privacy-policy terms-of-use delete-account .pages/
+          cp -R community-rules privacy-policy terms-of-use delete-account .pages/
       - name: Upload website artifact
         uses: actions/upload-pages-artifact@v3
         with:
